@@ -76,6 +76,7 @@ int sell_select(int *stockPrice, int i, int day, int myStock, int *myProfit){
     //一番高く売れるのが近い日を探す
     for(nowaday = i;nowaday < day-1;nowaday++){
         if(max == stockPrice[nowaday]){
+            //ポインタを直接指定することでreturnしなくても値を変えられる
             *myProfit += stockPrice[nowaday] - myStock;
             printf("sell : day %d at %d\n",nowaday,stockPrice[nowaday]);
             break;
